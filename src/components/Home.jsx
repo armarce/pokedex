@@ -34,7 +34,7 @@ export const Home = () => {
                 <h1>¡Hello trainer!</h1>
                 <h2>To start you have to give me your name</h2>
                 <fieldset>
-                    <input type="text" name="name" autocomplete="off" placeholder="Master" value={inputName} onChange={ e => setInputName(e.target.value)}/>
+                    <input type="text" name="name" autoComplete="off" placeholder="Master" value={inputName} onChange={ e => setInputName(e.target.value)}/>
                     <button id="start">
                         <i className="fa-solid fa-paper-plane"></i>
                     </button>

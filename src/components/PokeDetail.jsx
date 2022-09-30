@@ -43,7 +43,7 @@ export const PokeDetail = () => {
 
         <>
             <main id="home" >
-                <header class="center">
+                <header className="center">
                     <div>
                         <img src="logo.webp" id="logo" onClick={() => navigate('/pokemons/')}/>
                         <LiveSearch/>

@@ -38,7 +38,7 @@ export const Pokemons = () => {
         if(typeName){
 
             apiURL = `https://pokeapi.co/api/v2/type/${typeName}/`;
-
+            
             axios({method: 'get', url: apiURL})
             .then(resp => {
 

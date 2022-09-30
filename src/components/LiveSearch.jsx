@@ -56,7 +56,7 @@ export const LiveSearch = () => {
                 {isTabSearch ? (
                     <>
                         <i className="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" autocomplete="off" value={inputText} name="Buscar" onChange={e => search(e.target.value)} placeholder="Search pokemon"/>
+                        <input type="search" autoComplete="off" value={inputText} name="Buscar" onChange={e => search(e.target.value)} placeholder="Search pokemon"/>
                     </>
                     ) 
                     : 

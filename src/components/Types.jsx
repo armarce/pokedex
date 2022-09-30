@@ -13,7 +13,7 @@ export const Types = () => {
     useEffect(() => {
 
         axios.get('https://pokeapi.co/api/v2/type/')
-        .then(resp => setTypes(resp.data.results))
+        .then(resp => setTypes(resp.data.results.filter(item => item.name !== 'unknown' & item.name !== 'shadow')))
 
     }, []);
 
@@ -38,7 +38,7 @@ export const Types = () => {
             <option value="">Select a Pokemon type</option> 
             {types.map(type => (
 
-               <option key={type.name} value={type.name}>{type.name}</option>                 
+                <option key={type.name} value={type.name}>{type.name}</option>    
 
             ))}
         </select>
