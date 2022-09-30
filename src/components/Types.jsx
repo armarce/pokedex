@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { changeTypeName } from '../store/slices/typeName.slice';
 import { useNavigate } from "react-router-dom";
+import { changeCurrentPage, currentPage } from "../store/slices/currentPage.slice";
 
 export const Types = () => {
 
@@ -29,13 +30,15 @@ export const Types = () => {
 
         }
 
+        dispatch(changeCurrentPage(1));
+
         navigate('/pokemons/');
 
     }
 
     return(
         <select onChange={e => setTypeName(e.target.value)}>
-            <option value="">Select a Pokemon type</option> 
+            <option value="" selected disabled hidden>Select a Pokemon type</option> 
             {types.map(type => (
 
                 <option key={type.name} value={type.name}>{type.name}</option>    

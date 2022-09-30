@@ -4,6 +4,9 @@ import { Pokemon } from './Pokemon';
 import { useSelector, useDispatch } from 'react-redux';
 import { LiveSearch } from './LiveSearch';
 import { useNavigate } from 'react-router-dom';
+import { Gear } from './Gear';
+import { Config } from './Config';
+import { changeCurrentPage } from '../store/slices/currentPage.slice';
 
 export const Pokemons = () => {
 
@@ -11,11 +14,11 @@ export const Pokemons = () => {
 
     const [total, setTotal] = useState(0);
 
-    const [limit, setLimit] = useState(10);  // Se puede guardar en el store con redux para accederlo de forma global
+    const limit = useSelector(state => state.items);
 
     const [offset, setOffset] = useState(0);
 
-    const [currentPage, setCurrentPage] = useState(1);
+    const currentPage = useSelector(state => state.currentPage);
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -30,6 +33,8 @@ export const Pokemons = () => {
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
+
+    document.documentElement.setAttribute("data-theme", localStorage.getItem('theme'));
 
     useEffect(() => {
 
@@ -70,13 +75,15 @@ export const Pokemons = () => {
 
     const getPage = (page) => {
 
-        setCurrentPage(page);
+        dispatch(changeCurrentPage(page));
 
-        if(!typeName){
+        console.log(page);
+
+        //if(!typeName){
 
             page === 1 ? setOffset(0) : setOffset((page - 1) * limit);
 
-        }
+        //}
 
     }
     
@@ -104,7 +111,7 @@ export const Pokemons = () => {
 
             for(let page = 1; page <= pages; page++){
 
-                jsx.push(<li key={page} onClick={() => getPage(page)}>{page}</li>);
+                jsx.push(<li key={page} className={currentPage === page ? className : ''} onClick={() => getPage(page)}>{page}</li>);
 
             }
 
@@ -226,6 +233,7 @@ export const Pokemons = () => {
                         <ul className="pagination">
                             {pagination(total, limit, currentPage, getPage)}
                         </ul>
+                        <Gear/>
                     </main>
                 </>
                 

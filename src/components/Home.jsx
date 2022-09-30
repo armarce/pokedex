@@ -14,6 +14,8 @@ export const Home = () => {
 
     const dispatch = useDispatch();
 
+    document.documentElement.setAttribute("data-theme", localStorage.getItem('theme'));
+    
     const changeName = e => {
 
         e.preventDefault();
