@@ -5,6 +5,7 @@ import { userName } from '../store/slices/userName.slice';
 import { useSelector } from "react-redux";
 import { LiveSearch } from "./LiveSearch";
 import colors from '../colors.json';
+import { Gear } from "./Gear";
 
 export const PokeDetail = () => {
 
@@ -142,6 +143,7 @@ export const PokeDetail = () => {
                         </div>
                     </section>
                 </article>
+                <Gear/>
             </main>
         </>
     )

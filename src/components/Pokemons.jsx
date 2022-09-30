@@ -207,7 +207,7 @@ export const Pokemons = () => {
                 <>
                     <main id="home">
                         <header>
-                            <div>
+                            <div id="search-container">
                                 <img src="logo.webp" id="logo" onClick={() => navigate('/pokemons/')}/>
                                 <LiveSearch/>
                             </div>
