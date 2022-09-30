@@ -48,13 +48,13 @@ export const Pokemons = () => {
             .then(resp => {
 
                 setPokemons(resp.data.pokemon.slice(currentPage*limit, (currentPage*limit)+limit));
-
-                console.log();
                 
                 setTotal(resp.data.pokemon.length);
         
             })
-            .finally(() => setIsLoading(false))
+            .finally(
+                setTimeout(() => {setIsLoading(false)}, 1600)
+                )
 
         }else{
 
@@ -65,9 +65,12 @@ export const Pokemons = () => {
 
                 setPokemons(resp.data.results);
                 setTotal(resp.data.count);
+                setTimeout(() => {setIsLoading(false)}, 1600);
             
             })
-            .finally(() => setIsLoading(false))
+            .finally(
+                setTimeout(() => {setIsLoading(false)}, 1600)
+                )
 
         }
     
@@ -76,8 +79,6 @@ export const Pokemons = () => {
     const getPage = (page) => {
 
         dispatch(changeCurrentPage(page));
-
-        console.log(page);
 
         //if(!typeName){
 

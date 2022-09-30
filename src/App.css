@@ -914,18 +914,13 @@ html[data-theme=dark] main#home header #banner p{
   }
   main#home header #banner p{
     font-size: 40px;
-    line-height: 6rem;
-    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.4);
+    line-height: 5rem;
   }
 
 }
 @media screen and (max-width: 996px) {
   main#home #pokemons li{
     aspect-ratio: 1/1.2;
-  }
-  main#home header #banner p{
-    font-size: 36px;
-    line-height: 5rem;
   }
 }
 
