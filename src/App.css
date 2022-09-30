@@ -306,7 +306,7 @@ main#home header #banner{
 }
 main#home header #banner #rocket{
   height: 280px;
-  background-image: url('./rocket.png');
+  background-image: url('../rocket.png');
   filter: drop-shadow(3px 3px 3px var(--gray-dark));
   background-size: contain;
   background-position: center;
