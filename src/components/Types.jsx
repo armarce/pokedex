@@ -1,9 +1,12 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import { useDispatch } from 'react-redux';
+import { changeTypeName } from '../store/slices/typeName.slice';
 
 export const Types = () => {
 
     const [types, setTypes] = useState([]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
 
@@ -12,8 +15,22 @@ export const Types = () => {
 
     }, []);
 
+    const setTypeName = (name) => {
+
+        if(name){ 
+            
+            dispatch(changeTypeName(name));
+
+        }else{
+
+            dispatch(changeTypeName(''));
+
+        }
+
+    }
+
     return(
-        <select>
+        <select onChange={e => setTypeName(e.target.value)}>
             <option value="">Select a Pokemon type</option> 
             {types.map(type => (
 

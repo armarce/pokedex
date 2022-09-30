@@ -2,6 +2,7 @@ import axios from 'axios';
 import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import colors from '../colors.json';
+import { useSelector } from 'react-redux';
 
 export const Pokemon = ({url}) => {
 
@@ -11,6 +12,8 @@ export const Pokemon = ({url}) => {
 
     const [gradient, setGradient] = useState("");
 
+    const typeName = useSelector(state => state.typeName);
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -18,8 +21,8 @@ export const Pokemon = ({url}) => {
         axios.get(url)
         .then(resp => {
             setPokemon(resp.data);
-            setColor(colors[resp.data.types[0].type.name].color);
-            setGradient(colors[resp.data.types[0].type.name].gradient);
+            setColor(typeName? colors[typeName].color : colors[resp.data.types[0].type.name].color);
+            setGradient(typeName? colors[typeName].gradient : colors[resp.data.types[0].type.name].gradient);
         });
 
     }, []);
@@ -29,7 +32,7 @@ export const Pokemon = ({url}) => {
         const path = `/pokemon/${name}/`;
 
         navigate(path);
-        
+
     }
     
     return(
@@ -45,7 +48,7 @@ export const Pokemon = ({url}) => {
                     <p className="types">
                         {
                             pokemon.types?.map(type => (
-                                <span key={type.type.name} style={{background: color}}>{type.type.name}</span>
+                                <span key={type.type.name} style={{background: colors[type.type.name].color}}>{type.type.name}</span>
                             ))
                         }
                     </p>

@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import useOnclickOutside from "react-cool-onclickoutside";
 import { Types } from "./Types";
+import { useNavigate } from "react-router-dom";
 
 export const LiveSearch = () => {
 
@@ -10,6 +11,7 @@ export const LiveSearch = () => {
     const [results, setResults] = useState([]);
     const [isOpened, setIsOpened] = useState(false);
     const [isTabSearch, setIsTabSearch] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -41,9 +43,7 @@ export const LiveSearch = () => {
 
     const getId = url => url.split('/').at(-2);
 
-    const parseName = name => name.replace('-', ' ');
-
-    console.log(results);
+    const parseName = name => name?.replace('-', ' ');
 
     return(
         <>
@@ -56,7 +56,7 @@ export const LiveSearch = () => {
                 {isTabSearch ? (
                     <>
                         <i className="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" value={inputText} name="Buscar" onChange={e => search(e.target.value)} placeholder="Search pokemon"/>
+                        <input type="search" autocomplete="off" value={inputText} name="Buscar" onChange={e => search(e.target.value)} placeholder="Search pokemon"/>
                     </>
                     ) 
                     : 
@@ -69,7 +69,7 @@ export const LiveSearch = () => {
                 <ul id="results" ref={ref}>
                     {results.map(pokemon => (
 
-                        <li key={pokemon.url}>
+                        <li key={pokemon.url} onClick={() => navigate(`/pokemon/${pokemon.name}/`)}>
                             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${getId(pokemon.url)}.png`}/>
                             <span>{parseName(pokemon.name)}</span>
                         </li>

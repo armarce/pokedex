@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { change } from '../store/slices/userName.slice';
+import { change }  from '../store/slices/userName.slice';
+import { changeTypeName }  from '../store/slices/typeName.slice';
 
 export const Home = () => {
 
@@ -16,10 +17,12 @@ export const Home = () => {
     const changeName = e => {
 
         e.preventDefault();
-        
-        navigate('/pokemons/');
 
         dispatch(change(inputName));
+
+        dispatch(changeTypeName(''));
+        
+        navigate('/pokemons/');
 
     }
 
@@ -31,7 +34,7 @@ export const Home = () => {
                 <h1>¡Hello trainer!</h1>
                 <h2>To start you have to give me your name</h2>
                 <fieldset>
-                    <input type="text" name="name" placeholder="Master" value={inputName} onChange={ e => setInputName(e.target.value)}/>
+                    <input type="text" name="name" autocomplete="off" placeholder="Master" value={inputName} onChange={ e => setInputName(e.target.value)}/>
                     <button id="start">
                         <i className="fa-solid fa-paper-plane"></i>
                     </button>
