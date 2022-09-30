@@ -65,11 +65,11 @@ export const Pokemons = () => {
 
                 setPokemons(resp.data.results);
                 setTotal(resp.data.count);
-                setTimeout(() => {setIsLoading(false)}, 1600);
+                setTimeout(() => {setIsLoading(false)}, 1800);
             
             })
             .finally(
-                setTimeout(() => {setIsLoading(false)}, 1600)
+                setTimeout(() => {setIsLoading(false)}, 1800)
                 )
 
         }
