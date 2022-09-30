@@ -73,7 +73,7 @@ export const PokeDetail = () => {
                             </div>
                         </div>
                     </section>
-                    <section className="stats">
+                    <section id="stats-container" className="stats">
                         <div class="data-stats">
                             <h2>Stats</h2>
                             <div id="stat">
@@ -126,7 +126,7 @@ export const PokeDetail = () => {
                             </div>
                         </div>
                     </section>
-                    <section className="stats">
+                    <section id="moves-container" className="stats">
                         <div className="data-stats">
                             <h2>Moves</h2>
                             <div class="moves">

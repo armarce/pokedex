@@ -916,7 +916,24 @@ html[data-theme=dark] main#home header #banner p{
     font-size: 40px;
     line-height: 5rem;
   }
-
+  main#home article#pokemon{
+    
+    grid-template-areas: 'image moves-container' 
+                          'stats-container moves-container';
+    grid-template-columns: 1fr 1fr;
+  }
+  main#home article#pokemon #image{
+    grid-area: image;
+  }
+  main#home article#pokemon #stats-container{
+    grid-area: stats-container;
+  }
+  main#home article#pokemon #moves-container{
+    grid-area: moves-container;
+  }
+  main#home article#pokemon #moves-container .data-stats .moves{
+    height: 60rem;
+  }
 }
 @media screen and (max-width: 996px) {
   main#home #pokemons li{
@@ -937,11 +954,19 @@ html[data-theme=dark] main#home header #banner p{
   main#home header #banner p{
     font-size: 28px;
   }
+  main#home article#pokemon{
+    
+    grid-template-areas: 'image'
+                          'stats-container'
+                           'moves-container';
+    grid-template-columns: 80%;
+    justify-content: center;
+  } 
 }
 
 @media screen and (max-width: 640px) {
   main#home #pokemons li{
-    aspect-ratio: 1/1.2;
+    aspect-ratio: 1/1.1;
   }
   main#home header #banner p{
     font-size: 24px;
@@ -963,6 +988,10 @@ html[data-theme=dark] main#home header #banner p{
   #gear i{
     font-size: 20px;
   }
+  main#home article#pokemon{
+    justify-content: center;
+    grid-template-columns: 60%;
+  } 
 }
 @media screen and (max-width: 560px) {
   main#home #pokemons li{
@@ -970,15 +999,20 @@ html[data-theme=dark] main#home header #banner p{
     text-align: center;
     width: 260px;
     aspect-ratio: 1/1.2;
+    
   }
-  main#home header #search-container #logo{
-    width: 200px; 
+  main#home #pokemon #image #image-container{
+    aspect-ratio: 1/8;
+  }
+  main#home header #search-container #logo, 
+  main#home header #logo{
+    width: 240px; 
   }
   main#home header #live-search ul{
     width: 92vw;
   }
   main#home header fieldset input[type="search"]{
-    width: 80vw;
+    width: 68vw;
   }
   main#home header fieldset select{
     height: 4rem;
@@ -995,5 +1029,8 @@ html[data-theme=dark] main#home header #banner p{
   }
   #modal-container #theme span{
     font-size: 14px;
+  }
+  main#home article#pokemon{
+    grid-template-columns: 1fr;
   }
 }
