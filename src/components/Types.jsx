@@ -2,11 +2,13 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { changeTypeName } from '../store/slices/typeName.slice';
+import { useNavigate } from "react-router-dom";
 
 export const Types = () => {
 
     const [types, setTypes] = useState([]);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -16,7 +18,7 @@ export const Types = () => {
     }, []);
 
     const setTypeName = (name) => {
-
+        
         if(name){ 
             
             dispatch(changeTypeName(name));
@@ -26,6 +28,8 @@ export const Types = () => {
             dispatch(changeTypeName(''));
 
         }
+
+        navigate('/pokemons/');
 
     }
 
