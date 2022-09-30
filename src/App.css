@@ -1022,7 +1022,7 @@ html[data-theme=dark] main#home header #banner p{
     width: 240px; 
   }
   main#home header #live-search ul{
-    width: 92vw;
+    width: 86vw;
   }
   main#home header fieldset input[type="search"]{
     width: 68vw;
