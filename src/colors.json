@@ -1,0 +1,20 @@
+ {
+    "bug": {"color": "#41ae7a", "gradient": "linear-gradient(to right, #41ae7a, #39a571, #319b68, #28925f, #1f8956)"}, 
+    "dark": {"color": "#595978", "gradient": "linear-gradient(to right, #595978, #525270, #4b4b68, #454561, #3e3e59)"}, 
+    "dragon": {"color": "#3aa2b1", "gradient": "linear-gradient(to right, #3aa2b1, #359aa9, #3092a0, #2b8b98, #268390)"},
+    "electric": {"color": "#f2cb4f", "gradient": "linear-gradient(to right, #f2cb4f, #f4c944, #f5c738, #f7c52a, #f9c316)"},
+    "fairy": {"color": "#b31151", "gradient": "linear-gradient(to right, #b31151, #a40f4a, #950e43, #860c3c, #780a35)"}, 
+    "fighting": {"color": "#c05e41", "gradient": "linear-gradient(to right, #c05e41, #c1593a, #c15333, #c24e2c, #c24825)"},
+    "fire": {"color": "#ff6673", "gradient": "linear-gradient(to right, #ff6673, #ff5e6b, #fe5664, #fe4d5c, #fd4454)"},
+    "flying": {"color": "#82b1cf", "gradient": "linear-gradient(to right, #82b1cf, #76aed3, #69abd7, #5ba8dc, #4ba5e0)"},
+    "ghost": {"color": "#845185", "gradient": "linear-gradient(to right, #845185, #8a4e8c, #914b92, #974799, #9d429f)"},
+    "grass": {"color": "#45be63", "gradient": "linear-gradient(to right, #45be63, #3cb85a, #32b250, #27ac46, #19a63c)"},
+    "ground": {"color": "#835725", "gradient": "linear-gradient(to right, #835725, #7c5120, #764b1b, #6f4617, #694012)"},
+    "ice": {"color": "#9ecfe3", "gradient": "linear-gradient(to right, #9ecfe3, #8bc6df, #78bedb, #62b5d8, #4aacd4)"},
+    "normal": {"color": "#ebd072", "gradient": "linear-gradient(to right, #ebd072, #e6c861, #e1c050, #dbb73d, #d6af28)"},
+    "poison": {"color": "#8963b9", "gradient": "linear-gradient(to right, #8963b9, #8459ba, #7f4fbc, #7a45bd, #743abe)"},
+    "psychic": {"color": "#ff3930", "gradient": "linear-gradient(to right, #ff3930, #f93127, #f2271d, #ec1d13, #e50f05)"},
+    "rock": {"color": "#c63c3c", "gradient": "linear-gradient(to right, #c63c3c, #b53332, #a42928, #93201f, #831616)"},
+    "steel": {"color": "#52b54d", "gradient": "linear-gradient(to right, #52b54d, #47ae41, #3ba734, #2ea027, #1d9916)"},
+    "water": {"color": "#53a6ff", "gradient": "linear-gradient(to right, #53a6ff, #4aa0fd, #409afb, #3693f8, #2b8df6)"}
+ }
