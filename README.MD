@@ -1,1 +1,1 @@
-https://inquisitive-faloodeh-144416.netlify.app/
+https://pokedex.ardev.tech/
